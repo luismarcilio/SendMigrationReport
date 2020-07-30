@@ -1,0 +1,321 @@
+================================================
+<br />
+PERFORMANCE
+<br />
+================================================
+<br />
+<p></p>
+<table border="1" width="90%" align="center" summary="Script output">
+  <tr>
+    <th scope="col">
+      STATUS_TIMESTAMP
+    </th>
+    <th scope="col">
+      SUCCESS
+    </th>
+    <th scope="col">
+      ERROR
+    </th>
+  </tr>
+  <tr>
+    <td>
+      2020-07-19 18:00:00
+    </td>
+    <td>
+      0
+    </td>
+    <td>
+      12
+    </td>
+  </tr>
+  <tr>
+    <td>
+      2020-07-19 17:00:00
+    </td>
+    <td>
+      0
+    </td>
+    <td>
+      47
+    </td>
+  </tr>
+  <tr>
+    <td>
+      2020-07-19 16:00:00
+    </td>
+    <td>
+      0
+    </td>
+    <td>
+      50
+    </td>
+  </tr>
+  <tr>
+    <td>
+      2020-07-19 15:00:00
+    </td>
+    <td>
+      1509
+    </td>
+    <td>
+      6534
+    </td>
+  </tr>
+  <tr>
+    <td>
+      2020-07-19 14:00:00
+    </td>
+    <td>
+      38966
+    </td>
+    <td>
+      50
+    </td>
+  </tr>
+  <tr>
+    <td>
+      2020-07-19 13:00:00
+    </td>
+    <td>
+      60897
+    </td>
+    <td>
+      45
+    </td>
+  </tr>
+  <tr>
+    <td>
+      2020-07-19 12:00:00
+    </td>
+    <td>
+      61957
+    </td>
+    <td>
+      48
+    </td>
+  </tr>
+  <tr>
+    <td>
+      2020-07-19 11:00:00
+    </td>
+    <td>
+      61785
+    </td>
+    <td>
+      50
+    </td>
+  </tr>
+  <tr>
+    <td>
+      2020-07-19 10:00:00
+    </td>
+    <td>
+      61577
+    </td>
+    <td>
+      69
+    </td>
+  </tr>
+  <tr>
+    <td>
+      2020-07-19 09:00:00
+    </td>
+    <td>
+      61231
+    </td>
+    <td>
+      61
+    </td>
+  </tr>
+</table>
+<p>
+  ================================================
+  <br />
+  ESTIMATED FINISH TIME
+  <br />
+  ================================================
+  <br />
+</p>
+
+<pre>
+     to_char(sysdate + to_process/throughput/24, 'yyyy/mm/dd hh24:mi:ss') as estimated_finish
+                                 *
+</pre>
+ERROR at line 2:
+<br />
+ORA-01476: divisor is equal to zero
+<br />
+
+<br />
+
+<br />
+
+<br />
+================================================
+<br />
+STATUS OF HIERARCHIES
+<br />
+================================================
+<br />
+<p></p>
+<table border="1" width="90%" align="center" summary="Script output">
+  <tr>
+    <th scope="col">
+      COUNT(1)
+    </th>
+    <th scope="col">
+      STATUS
+    </th>
+  </tr>
+  <tr>
+    <td align="right">
+      75093
+    </td>
+    <td>
+      READY2MIGR
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      3476399
+    </td>
+    <td>
+      SUCCESS
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      855
+    </td>
+    <td>
+      ERROR
+    </td>
+  </tr>
+</table>
+<p>
+  <br />
+
+  <br />
+
+  <br />
+  ================================================
+  <br />
+  STATUS OF ACCOUNTS
+  <br />
+  ================================================
+  <br />
+</p>
+
+<p></p>
+<table border="1" width="90%" align="center" summary="Script output">
+  <tr>
+    <th scope="col">
+      COUNT(1)
+    </th>
+    <th scope="col">
+      STATUS
+    </th>
+  </tr>
+  <tr>
+    <td align="right">
+      76456
+    </td>
+    <td>
+      READY2MIGR
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      3569593
+    </td>
+    <td>
+      SUCCESS
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      1146
+    </td>
+    <td>
+      ERROR
+    </td>
+  </tr>
+</table>
+<p>
+  <br />
+
+  <br />
+
+  <br />
+  ================================================
+  <br />
+  MAIN ERRORS
+  <br />
+  ================================================
+  <br />
+</p>
+
+<p></p>
+<table border="1" width="90%" align="center" summary="Script output">
+  <tr>
+    <th scope="col">
+      COUNT(1)
+    </th>
+    <th scope="col">
+      MESSAGE_ERROR_CODE
+    </th>
+  </tr>
+  <tr>
+    <td align="right">
+      561
+    </td>
+    <td>
+      169180
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      232
+    </td>
+    <td>
+      ACC0002
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      30
+    </td>
+    <td>
+      Om-112
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      2
+    </td>
+    <td>
+      Om-154
+    </td>
+  </tr>
+  <tr>
+    <td align="right">
+      1
+    </td>
+    <td>
+      Om-160
+    </td>
+  </tr>
+</table>
+<p>
+  <br />
+
+  <br />
+
+  <br />
+  ================================================
+  <br />
+  RESUBMITTING TECHNICAL ERRORS
+  <br />
+  ================================================
+  <br />
+</p>
