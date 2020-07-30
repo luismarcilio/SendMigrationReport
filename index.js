@@ -32,7 +32,7 @@ exports.sendMigrationReport = async (event) => {
     to: receipients,
     subject,
     text,
-    html: `<h1>Migration report for ${getFormattedTime()}</h1><pre>${text}</pre>`,
+    html: `<h1>Migration report for ${getFormattedTime()}</h1>${text}`,
   };
   let result = await transport.sendMail(message);
   console.log("Mail sent: ", result);
