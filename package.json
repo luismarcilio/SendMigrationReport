@@ -1,0 +1,28 @@
+{
+  "name": "sendmigrationreport",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "build": "sam build",
+    "deploy": "sam deploy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luismarcilio/SendMigrationReport.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luismarcilio/SendMigrationReport/issues"
+  },
+  "homepage": "https://github.com/luismarcilio/SendMigrationReport#readme",
+  "dependencies": {
+    "nodemailer": "^6.4.11",
+    "aws-sdk": "^2.437.0"
+  },
+  "devDependencies": {
+    "jest": "^24.7.1"
+  }
+}
