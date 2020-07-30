@@ -24,8 +24,16 @@ Resources:
           Properties:
             Path: /
             Method: POST
+            RestApiId: !Ref SendMigrationReportApi
+
+  SendMigrationReportApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: Prod
+      TracingEnabled: True
+      EndpointConfiguration: REGIONAL
 
 Outputs:
   WebEndpoint:
     Description: "API Gateway endpoint URL for Prod stage"
-    Value: !Sub "https://${ServerlessRestApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
+    Value: !Sub "https://${SendMigrationReportApi}.execute-api.${AWS::Region}.amazonaws.com/Prod/"
