@@ -1,15 +1,22 @@
 const nodemailer = require("nodemailer");
-const transport = nodemailer.createTransport({
-  host: "smtp-mail.outlook.com",
+
+const receipients = process.env.RECEIPIENTS;
+const host = process.env.HOST;
+const user = process.env.USERNAME;
+const pass = process.env.PASSWORD;
+
+const stmpTransport = {
+  host,
   port: 587,
   secure: false,
   auth: {
-    user: "deolivel@amdocs.com",
-    pass: "Iflscience04",
+    user,
+    pass,
   },
-});
+};
+console.debug("smtpTransport: ", stmpTransport);
 
-const receipients = process.env.RECEIPIENTS;
+const transport = nodemailer.createTransport(stmpTransport);
 
 const getFormattedTime = () => {
   const ts = Date.now();
@@ -20,7 +27,7 @@ const getFormattedTime = () => {
 exports.sendMigrationReport = async (event) => {
   if (event.httpMethod !== "POST") {
     throw new Error(
-      `Only PUSH accepted, you tried: ${event.httpMethod} method.`
+      `Only POST accepted, you tried: ${event.httpMethod} method.`
     );
   }
 
@@ -35,7 +42,7 @@ exports.sendMigrationReport = async (event) => {
     html: `<h1>Migration report for ${getFormattedTime()}</h1>${text}`,
   };
   let result = await transport.sendMail(message);
-  console.log("Mail sent: ", result);
+  console.debug("Mail sent: ", result);
   const response = {
     statusCode: 200,
     body: JSON.stringify(result),
