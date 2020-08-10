@@ -1,6 +1,5 @@
 const nodemailer = require("nodemailer");
 
-const receipients = process.env.RECEIPIENTS;
 const host = process.env.HOST;
 const user = process.env.USERNAME;
 const pass = process.env.PASSWORD;
@@ -25,24 +24,30 @@ const getFormattedTime = () => {
 };
 
 exports.sendMigrationReport = async (event) => {
+  console.log("event: ", event);
   if (event.httpMethod !== "POST") {
     throw new Error(
       `Only POST accepted, you tried: ${event.httpMethod} method.`
     );
   }
+  const data = JSON.parse(event.body);
+  console.log("data: ", data);
 
-  const subject = `Migration report for ${getFormattedTime()}`;
-  const text = event.body;
+  const subject = data.subject;
+  const receipients = data.receipients;
+  const text = data.mailBody;
+  const title = data.title;
+
 
   const message = {
     from: "luismarcilio.deoliveira@amdocs.com",
     to: receipients,
     subject,
     text,
-    html: `<h1>Migration report for ${getFormattedTime()}</h1>${text}`,
+    html: `<h1>${title}</h1>${text}`,
   };
   let result = await transport.sendMail(message);
-  console.debug("Mail sent: ", result);
+  console.log("Mail sent: ", result);
   const response = {
     statusCode: 200,
     body: JSON.stringify(result),

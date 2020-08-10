@@ -5,7 +5,7 @@ describe("Test send email", function () {
   jest.setTimeout(30000);
   // This test invokes putItemHandler() and compare the result
   it("should send the email", async () => {
-    const body = fs.readFileSync("__tests__/unit/handlers/hourly_report.html");
+    const body = fs.readFileSync("__tests__/unit/handlers/input.json");
 
     const event = {
       httpMethod: "POST",
